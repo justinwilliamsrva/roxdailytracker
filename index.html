@@ -30,12 +30,18 @@
                 margin-left: 0;
                 margin-right: 0;
             }
-            h1 {
+            #colors {
                 width: 33.3%;
                 float: left;
                 text-align: center;
                 margin: 0;
                 padding: 0;
+            }
+            .months {
+                border: 2px solid darkgreen;
+                width: 14.1%;
+                text-align: center;
+                margin: auto;
             }
             .dates {
                 width: 14.1%;
@@ -48,40 +54,43 @@
     </head>
     <body>
         <div class="header" id="header">
-            <h1>Green: <span id="green"></span> - <span id="greenp"></span>%</h1>
-            <h1>Yellow: <span id="yellow"></span> - <span id="yellowp"></span>%</h1>
-            <h1>Red: <span id="red"></span> - <span id="redp"></span>%</h1>
+            <h1 id="colors">Green: <span id="green"></span> - <span id="greenp"></span>%</h1>
+            <h1 id="colors">Yellow: <span id="yellow"></span> - <span id="yellowp"></span>%</h1>
+            <h1 id="colors">Red: <span id="red"></span> - <span id="redp"></span>%</h1>
         </div>
 
-        <div class="header" id="dates">
-            <p class="dates" id="click">
-                Monday<br />
-                June 9
-            </p>
-            <p class="dates" id="click2">
-                Tuesday<br />
-                June 30
-            </p>
-            <p class="dates" id="click3">
-                Wednesday<br />
-                July 1
-            </p>
-            <p class="dates" id="click4">
-                Thursday<br />
-                July 2
-            </p>
-            <p class="dates" id="click5">
-                Friday<br />
-                July 3
-            </p>
-            <p class="dates" id="click6">
-                Saturday<br />
-                July 4
-            </p>
-            <p class="dates" id="click7">
-                Sunday<br />
-                July 5
-            </p>
+        <div id="dates">
+            <h1 class="months">July</h1>
+            <div class="header">
+                <p class="dates" id="click">
+                    Monday<br />
+                    June 9
+                </p>
+                <p class="dates" id="click2">
+                    Tuesday<br />
+                    June 30
+                </p>
+                <p class="dates" id="click3">
+                    Wednesday<br />
+                    July 1
+                </p>
+                <p class="dates" id="click4">
+                    Thursday<br />
+                    July 2
+                </p>
+                <p class="dates" id="click5">
+                    Friday<br />
+                    July 3
+                </p>
+                <p class="dates" id="click6">
+                    Saturday<br />
+                    July 4
+                </p>
+                <p class="dates" id="click7">
+                    Sunday<br />
+                    July 5
+                </p>
+            </div>
         </div>
 
         <script>
