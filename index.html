@@ -5,25 +5,40 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <style>
-            #container {
-                display: flex;
-                flex-direction: column;
+            body {
+                margin: 0;
+                padding: 0;
             }
 
             .header {
-                margin: auto;
-                width: 90%;
+                width: 100%;
                 display: block;
-                border-bottom: grey;
             }
-
+            #header {
+                margin: auto;
+                position: fixed;
+                top: 0;
+                border-bottom: 5px solid grey;
+                clear: both;
+                margin: 0;
+                padding: 0;
+                overflow: auto;
+                background-color: white;
+            }
+            #dates {
+                margin-top: 10%;
+                margin-left: 0;
+                margin-right: 0;
+            }
             h1 {
-                width: 33%;
+                width: 33.3%;
                 float: left;
                 text-align: center;
+                margin: 0;
+                padding: 0;
             }
             .dates {
-                width: 14%;
+                width: 14.1%;
                 text-align: center;
                 padding: 40px 0;
                 border: 1px solid black;
@@ -32,42 +47,41 @@
         </style>
     </head>
     <body>
-        <div id="container">
-            <div class="header">
-                <h1>Green: <span id="green"></span> - <span id="greenp"></span>%</h1>
-                <h1>Yellow: <span id="yellow"></span> - <span id="yellowp"></span>%</h1>
-                <h1>Red: <span id="red"></span> - <span id="redp"></span>%</h1>
-            </div>
-            <div class="header">
-                <p class="dates" id="click">
-                    Monday<br />
-                    June 9
-                </p>
-                <p class="dates" id="click2">
-                    Tuesday<br />
-                    June 30
-                </p>
-                <p class="dates" id="click3">
-                    Wednesday<br />
-                    July 1
-                </p>
-                <p class="dates" id="click4">
-                    Thursday<br />
-                    July 2
-                </p>
-                <p class="dates" id="click5">
-                    Friday<br />
-                    July 3
-                </p>
-                <p class="dates" id="click6">
-                    Saturday<br />
-                    July 4
-                </p>
-                <p class="dates" id="click7">
-                    Sunday<br />
-                    July 5
-                </p>
-            </div>
+        <div class="header" id="header">
+            <h1>Green: <span id="green"></span> - <span id="greenp"></span>%</h1>
+            <h1>Yellow: <span id="yellow"></span> - <span id="yellowp"></span>%</h1>
+            <h1>Red: <span id="red"></span> - <span id="redp"></span>%</h1>
+        </div>
+
+        <div class="header" id="dates">
+            <p class="dates" id="click">
+                Monday<br />
+                June 9
+            </p>
+            <p class="dates" id="click2">
+                Tuesday<br />
+                June 30
+            </p>
+            <p class="dates" id="click3">
+                Wednesday<br />
+                July 1
+            </p>
+            <p class="dates" id="click4">
+                Thursday<br />
+                July 2
+            </p>
+            <p class="dates" id="click5">
+                Friday<br />
+                July 3
+            </p>
+            <p class="dates" id="click6">
+                Saturday<br />
+                July 4
+            </p>
+            <p class="dates" id="click7">
+                Sunday<br />
+                July 5
+            </p>
         </div>
 
         <script>
@@ -127,9 +141,18 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                console.log(Math.floor((green / i) * 100));
+                console.log(green);
+                console.log("fish");
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
             }
             totals();
             click.addEventListener("click", function () {
@@ -175,9 +198,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
 
             click2.addEventListener("click", function () {
@@ -222,9 +245,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
 
             click3.addEventListener("click", function () {
@@ -269,9 +292,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
             click4.addEventListener("click", function () {
                 green = localStorage.getItem("green");
@@ -315,9 +338,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
             click5.addEventListener("click", function () {
                 green = localStorage.getItem("green");
@@ -361,9 +384,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
             click6.addEventListener("click", function () {
                 green = localStorage.getItem("green");
@@ -407,9 +430,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
             click7.addEventListener("click", function () {
                 green = localStorage.getItem("green");
@@ -453,9 +476,9 @@
                 document.getElementById("green").innerHTML = green;
                 document.getElementById("yellow").innerHTML = yellow;
                 document.getElementById("red").innerHTML = red;
-                document.getElementById("greenp").innerHTML = (green / i) * 100;
-                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
-                document.getElementById("redp").innerHTML = (red / i) * 100;
+                document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
             });
         </script>
     </body>
