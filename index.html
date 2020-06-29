@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header {
+                margin: auto;
+                width: 100%;
+                display: block;
+                border-bottom: grey;
+            }
+
+            h1 {
+                width: 30%;
+                float: left;
+                text-align: center;
+            }
+            #click,
+            #click2,
+            #click3,
+            #click4,
+            #click5,
+            #click6,
+            #click7 {
+                width: 14%;
+                text-align: center;
+                padding: 40px 0;
+                border: 1px solid black;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div class="header">
+                <h1>Green: <span id="green"></span> - <span id="greenp"></span>%</h1>
+                <h1>Yellow: <span id="yellow"></span> - <span id="yellowp"></span>%</h1>
+                <h1>Red: <span id="red"></span> - <span id="redp"></span>%</h1>
+            </div>
+            <div class="header">
+                <p id="click">
+                    Monday<br />
+                    June 29
+                </p>
+                <p id="click2">
+                    Tuesday<br />
+                    June 30
+                </p>
+                <p id="click3">
+                    Wednesday<br />
+                    July 1
+                </p>
+                <p id="click4">
+                    Thursday<br />
+                    July 2
+                </p>
+                <p id="click5">
+                    Friday<br />
+                    July 3
+                </p>
+                <p id="click6">
+                    Saturday<br />
+                    July 4
+                </p>
+                <p id="click7">
+                    Sunday<br />
+                    July 5
+                </p>
+            </div>
+        </div>
+
+        <script>
+            var click = document.getElementById("click");
+            var click2 = document.getElementById("click2");
+            var click3 = document.getElementById("click3");
+            var click4 = document.getElementById("click4");
+            var click5 = document.getElementById("click5");
+            var click6 = document.getElementById("click6");
+            var click7 = document.getElementById("click7");
+            var green = 0;
+            var yellow = 0;
+            var red = 0;
+            var i = 0;
+            var getColor;
+            var getColor2;
+            var getColor3;
+            var getColor4;
+            var getColor5;
+            var getColor6;
+            var getColor7;
+
+            if (localStorage.getItem("background") !== null) {
+                getColor = localStorage.background;
+                click.style.backgroundColor = getColor;
+            }
+            if (localStorage.getItem("background2") !== null) {
+                getColor2 = localStorage.background2;
+                click2.style.backgroundColor = getColor2;
+            }
+            if (localStorage.getItem("background3") !== null) {
+                getColor3 = localStorage.background3;
+                click3.style.backgroundColor = getColor3;
+            }
+            if (localStorage.getItem("background4") !== null) {
+                getColor4 = localStorage.background4;
+                click4.style.backgroundColor = getColor4;
+            }
+            if (localStorage.getItem("background5") !== null) {
+                getColor5 = localStorage.background5;
+                click5.style.backgroundColor = getColor5;
+            }
+            if (localStorage.getItem("background6") !== null) {
+                getColor6 = localStorage.background6;
+                click6.style.backgroundColor = getColor6;
+            }
+            if (localStorage.getItem("background7") !== null) {
+                getColor7 = localStorage.background7;
+                click7.style.backgroundColor = getColor7;
+            }
+
+            function totals() {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            }
+            totals();
+            click.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+
+                if (getColor == "green") {
+                    getColor = "yellow";
+                    click.style.backgroundColor = getColor;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor == "yellow") {
+                    getColor = "red";
+                    click.style.backgroundColor = getColor;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor == "red") {
+                    getColor = "white";
+                    click.style.backgroundColor = getColor;
+                    red--;
+                    localStorage.setItem("background", "white");
+                    localStorage.setItem("red", red);
+                    i--;
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor = "green";
+                    click.style.backgroundColor = getColor;
+                    green++;
+                    localStorage.setItem("background", "green");
+                    localStorage.setItem("green", green);
+                    i++;
+                    localStorage.setItem("i", i);
+                }
+                console.log(i);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+
+            click2.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor2 == "green") {
+                    getColor2 = "yellow";
+                    click2.style.backgroundColor = getColor2;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background2", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor2 == "yellow") {
+                    getColor2 = "red";
+                    click2.style.backgroundColor = getColor2;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background2", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor2 == "red") {
+                    getColor2 = "white";
+                    click2.style.backgroundColor = getColor2;
+                    red--;
+                    i--;
+                    localStorage.setItem("background2", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor2 = "green";
+                    click2.style.backgroundColor = getColor2;
+                    green++;
+                    i++;
+                    localStorage.setItem("background2", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+
+            click3.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor3 == "green") {
+                    getColor3 = "yellow";
+                    click3.style.backgroundColor = getColor3;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background3", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor3 == "yellow") {
+                    getColor3 = "red";
+                    click3.style.backgroundColor = getColor3;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background3", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor3 == "red") {
+                    getColor3 = "white";
+                    click3.style.backgroundColor = getColor3;
+                    red--;
+                    i--;
+                    localStorage.setItem("background3", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor3 = "green";
+                    click3.style.backgroundColor = getColor3;
+                    green++;
+                    i++;
+                    localStorage.setItem("background3", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+            click4.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor4 == "green") {
+                    getColor4 = "yellow";
+                    click4.style.backgroundColor = getColor4;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background4", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor4 == "yellow") {
+                    getColor4 = "red";
+                    click4.style.backgroundColor = getColor4;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background4", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor4 == "red") {
+                    getColor4 = "white";
+                    click4.style.backgroundColor = getColor4;
+                    red--;
+                    i--;
+                    localStorage.setItem("background4", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor4 = "green";
+                    click4.style.backgroundColor = getColor4;
+                    green++;
+                    i++;
+                    localStorage.setItem("background4", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+        </script>
+    </body>
+</html>
