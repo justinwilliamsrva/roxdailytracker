@@ -47,7 +47,7 @@
             <div class="header">
                 <p id="click">
                     Monday<br />
-                    June 29
+                    June 69
                 </p>
                 <p id="click2">
                     Tuesday<br />
@@ -314,6 +314,144 @@
                     green++;
                     i++;
                     localStorage.setItem("background4", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+            click5.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor5 == "green") {
+                    getColor5 = "yellow";
+                    click5.style.backgroundColor = getColor5;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background5", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor5 == "yellow") {
+                    getColor5 = "red";
+                    click5.style.backgroundColor = getColor5;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background5", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor5 == "red") {
+                    getColor5 = "white";
+                    click5.style.backgroundColor = getColor5;
+                    red--;
+                    i--;
+                    localStorage.setItem("background5", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor5 = "green";
+                    click5.style.backgroundColor = getColor5;
+                    green++;
+                    i++;
+                    localStorage.setItem("background5", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+            click6.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor6 == "green") {
+                    getColor6 = "yellow";
+                    click6.style.backgroundColor = getColor6;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background6", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor6 == "yellow") {
+                    getColor6 = "red";
+                    click6.style.backgroundColor = getColor6;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background6", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor6 == "red") {
+                    getColor6 = "white";
+                    click6.style.backgroundColor = getColor6;
+                    red--;
+                    i--;
+                    localStorage.setItem("background6", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor6 = "green";
+                    click6.style.backgroundColor = getColor6;
+                    green++;
+                    i++;
+                    localStorage.setItem("background6", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                document.getElementById("greenp").innerHTML = (green / i) * 100;
+                document.getElementById("yellowp").innerHTML = (yellow / i) * 100;
+                document.getElementById("redp").innerHTML = (red / i) * 100;
+            });
+            click7.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor7 == "green") {
+                    getColor7 = "yellow";
+                    click7.style.backgroundColor = getColor7;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background7", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor7 == "yellow") {
+                    getColor7 = "red";
+                    click7.style.backgroundColor = getColor7;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background7", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor7 == "red") {
+                    getColor7 = "white";
+                    click7.style.backgroundColor = getColor7;
+                    red--;
+                    i--;
+                    localStorage.setItem("background7", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor7 = "green";
+                    click7.style.backgroundColor = getColor7;
+                    green++;
+                    i++;
+                    localStorage.setItem("background7", "green");
                     localStorage.setItem("green", green);
                     localStorage.setItem("i", i);
                 }
