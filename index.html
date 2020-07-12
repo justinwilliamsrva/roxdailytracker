@@ -48,7 +48,7 @@
                 margin-bottom: 10px;
             }
             .dates {
-                width: 14.1%;
+                width: 19.5%;
                 text-align: center;
                 padding: 10px 0;
                 border: 1px solid black;
@@ -56,7 +56,6 @@
                 cursor: pointer;
                 margin: 0;
             }
-
         </style>
     </head>
     <body>
@@ -70,63 +69,55 @@
             <h1 class="months">Current Date: <span id="currentDate"></span></h1>
             <div class="header">
                 <p class="dates" id="click">
-                    Monday<br />
                     June 9
                 </p>
                 <p class="dates" id="click2">
-                    Tuesday<br />
                     June 30
                 </p>
                 <p class="dates" id="click3">
-                    Wednesday<br />
                     July 1
                 </p>
                 <p class="dates" id="click4">
-                    Thursday<br />
                     July 2
                 </p>
                 <p class="dates" id="click5">
-                    Friday<br />
                     July 3
-                </p>
-                <p class="dates" id="click6">
-                    Saturday<br />
-                    July 4
-                </p>
-                <p class="dates" id="click7">
-                    Sunday<br />
-                    July 5
                 </p>
             </div>
             <!-- Second List -->
             <div class="header">
                 <p class="dates" id="click8">
-                    Monday<br />
                     July 6
                 </p>
                 <p class="dates" id="click9">
-                    Tuesday<br />
                     July 7
                 </p>
                 <p class="dates" id="click10">
-                    Wednesday<br />
                     July 8
                 </p>
                 <p class="dates" id="click11">
-                    Thursday<br />
                     July 9
                 </p>
                 <p class="dates" id="click12">
-                    Friday<br />
                     July 10
                 </p>
+            </div>
+            <!-- Third List -->
+            <div class="header">
                 <p class="dates" id="click13">
-                    Saturday<br />
-                    July 11
+                    July 13
                 </p>
                 <p class="dates" id="click14">
-                    Sunday<br />
-                    July 12
+                    July 14
+                </p>
+                <p class="dates" id="click15">
+                    July 15
+                </p>
+                <p class="dates" id="click16">
+                    July 16
+                </p>
+                <p class="dates" id="click17">
+                    July 17
                 </p>
             </div>
         </div>
@@ -137,8 +128,7 @@
             var click3 = document.getElementById("click3");
             var click4 = document.getElementById("click4");
             var click5 = document.getElementById("click5");
-            var click6 = document.getElementById("click6");
-            var click7 = document.getElementById("click7");
+
             var click8 = document.getElementById("click8");
             var click9 = document.getElementById("click9");
             var click10 = document.getElementById("click10");
@@ -146,6 +136,10 @@
             var click12 = document.getElementById("click12");
             var click13 = document.getElementById("click13");
             var click14 = document.getElementById("click14");
+            var click15 = document.getElementById("click15");
+            var click16 = document.getElementById("click16");
+            var click17 = document.getElementById("click17");
+
             var green = 0;
             var yellow = 0;
             var red = 0;
@@ -155,8 +149,7 @@
             var getColor3;
             var getColor4;
             var getColor5;
-            var getColor6;
-            var getColor7;
+
             var getColor8;
             var getColor9;
             var getColor10;
@@ -164,6 +157,9 @@
             var getColor12;
             var getColor13;
             var getColor14;
+            var getColor15;
+            var getColor16;
+            var getColor17;
 
             console.log(moment().format("MMM Do"));
             document.getElementById("currentDate").innerHTML = moment().format("MMMM Do");
@@ -188,14 +184,8 @@
                 getColor5 = localStorage.background5;
                 click5.style.backgroundColor = getColor5;
             }
-            if (localStorage.getItem("background6") !== null) {
-                getColor6 = localStorage.background6;
-                click6.style.backgroundColor = getColor6;
-            }
-            if (localStorage.getItem("background7") !== null) {
-                getColor7 = localStorage.background7;
-                click7.style.backgroundColor = getColor7;
-            }
+
+
             if (localStorage.getItem("background8") !== null) {
                 getColor8 = localStorage.background8;
                 click8.style.backgroundColor = getColor8;
@@ -223,6 +213,18 @@
             if (localStorage.getItem("background14") !== null) {
                 getColor14 = localStorage.background14;
                 click14.style.backgroundColor = getColor14;
+            }
+            if (localStorage.getItem("background15") !== null) {
+                getColor15 = localStorage.background15;
+                click15.style.backgroundColor = getColor15;
+            }
+            if (localStorage.getItem("background16") !== null) {
+                getColor16 = localStorage.background16;
+                click16.style.backgroundColor = getColor16;
+            }
+            if (localStorage.getItem("background17") !== null) {
+                getColor17 = localStorage.background17;
+                click17.style.backgroundColor = getColor17;
             }
 
             function totals() {
@@ -491,110 +493,6 @@
                     green++;
                     i++;
                     localStorage.setItem("background5", "green");
-                    localStorage.setItem("green", green);
-                    localStorage.setItem("i", i);
-                }
-                console.log(green);
-                document.getElementById("green").innerHTML = green;
-                document.getElementById("yellow").innerHTML = yellow;
-                document.getElementById("red").innerHTML = red;
-                if (isNaN(Math.floor((green / i) * 100))) {
-                    document.getElementById("greenp").innerHTML = 0;
-                    document.getElementById("yellowp").innerHTML = 0;
-                    document.getElementById("redp").innerHTML = 0;
-                } else {
-                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
-                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
-                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
-                }
-            });
-            click6.addEventListener("click", function () {
-                green = localStorage.getItem("green");
-                yellow = localStorage.getItem("yellow");
-                red = localStorage.getItem("red");
-                i = localStorage.getItem("i");
-                if (getColor6 == "green") {
-                    getColor6 = "yellow";
-                    click6.style.backgroundColor = getColor6;
-                    yellow++;
-                    green--;
-                    localStorage.setItem("background6", "yellow");
-                    localStorage.setItem("yellow", yellow);
-                    localStorage.setItem("green", green);
-                } else if (getColor6 == "yellow") {
-                    getColor6 = "red";
-                    click6.style.backgroundColor = getColor6;
-                    red++;
-                    yellow--;
-                    localStorage.setItem("background6", "red");
-                    localStorage.setItem("yellow", yellow);
-                    localStorage.setItem("red", red);
-                } else if (getColor6 == "red") {
-                    getColor6 = "white";
-                    click6.style.backgroundColor = getColor6;
-                    red--;
-                    i--;
-                    localStorage.setItem("background6", "white");
-                    localStorage.setItem("red", red);
-                    localStorage.setItem("i", i);
-                } else {
-                    getColor6 = "green";
-                    click6.style.backgroundColor = getColor6;
-                    green++;
-                    i++;
-                    localStorage.setItem("background6", "green");
-                    localStorage.setItem("green", green);
-                    localStorage.setItem("i", i);
-                }
-                console.log(green);
-                document.getElementById("green").innerHTML = green;
-                document.getElementById("yellow").innerHTML = yellow;
-                document.getElementById("red").innerHTML = red;
-                if (isNaN(Math.floor((green / i) * 100))) {
-                    document.getElementById("greenp").innerHTML = 0;
-                    document.getElementById("yellowp").innerHTML = 0;
-                    document.getElementById("redp").innerHTML = 0;
-                } else {
-                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
-                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
-                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
-                }
-            });
-            click7.addEventListener("click", function () {
-                green = localStorage.getItem("green");
-                yellow = localStorage.getItem("yellow");
-                red = localStorage.getItem("red");
-                i = localStorage.getItem("i");
-                if (getColor7 == "green") {
-                    getColor7 = "yellow";
-                    click7.style.backgroundColor = getColor7;
-                    yellow++;
-                    green--;
-                    localStorage.setItem("background7", "yellow");
-                    localStorage.setItem("yellow", yellow);
-                    localStorage.setItem("green", green);
-                } else if (getColor7 == "yellow") {
-                    getColor7 = "red";
-                    click7.style.backgroundColor = getColor7;
-                    red++;
-                    yellow--;
-                    localStorage.setItem("background7", "red");
-                    localStorage.setItem("yellow", yellow);
-                    localStorage.setItem("red", red);
-                } else if (getColor7 == "red") {
-                    getColor7 = "white";
-                    click7.style.backgroundColor = getColor7;
-                    red--;
-                    i--;
-                    localStorage.setItem("background7", "white");
-                    localStorage.setItem("red", red);
-                    localStorage.setItem("i", i);
-                } else {
-                    getColor7 = "green";
-                    click7.style.backgroundColor = getColor7;
-                    green++;
-                    i++;
-                    localStorage.setItem("background7", "green");
                     localStorage.setItem("green", green);
                     localStorage.setItem("i", i);
                 }
@@ -959,6 +857,162 @@
                     green++;
                     i++;
                     localStorage.setItem("background14", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            });
+            click15.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor15 == "green") {
+                    getColor15 = "yellow";
+                    click15.style.backgroundColor = getColor15;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background15", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor15 == "yellow") {
+                    getColor15 = "red";
+                    click15.style.backgroundColor = getColor15;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background15", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor15 == "red") {
+                    getColor15 = "white";
+                    click15.style.backgroundColor = getColor15;
+                    red--;
+                    i--;
+                    localStorage.setItem("background15", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor15 = "green";
+                    click15.style.backgroundColor = getColor15;
+                    green++;
+                    i++;
+                    localStorage.setItem("background15", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            });
+            click16.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor16 == "green") {
+                    getColor16 = "yellow";
+                    click16.style.backgroundColor = getColor16;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background16", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor16 == "yellow") {
+                    getColor16 = "red";
+                    click16.style.backgroundColor = getColor16;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background16", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor16 == "red") {
+                    getColor16 = "white";
+                    click16.style.backgroundColor = getColor16;
+                    red--;
+                    i--;
+                    localStorage.setItem("background16", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor16 = "green";
+                    click16.style.backgroundColor = getColor16;
+                    green++;
+                    i++;
+                    localStorage.setItem("background16", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            });
+            click17.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor17 == "green") {
+                    getColor17 = "yellow";
+                    click17.style.backgroundColor = getColor17;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background17", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor17 == "yellow") {
+                    getColor17 = "red";
+                    click17.style.backgroundColor = getColor17;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background17", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor17 == "red") {
+                    getColor17 = "white";
+                    click17.style.backgroundColor = getColor17;
+                    red--;
+                    i--;
+                    localStorage.setItem("background17", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor17 = "green";
+                    click17.style.backgroundColor = getColor17;
+                    green++;
+                    i++;
+                    localStorage.setItem("background17", "green");
                     localStorage.setItem("green", green);
                     localStorage.setItem("i", i);
                 }
