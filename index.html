@@ -120,6 +120,24 @@
                     July 17
                 </p>
             </div>
+            <!-- Fourth List -->
+            <div class="header">
+                <p class="dates" id="click18">
+                    July 20
+                </p>
+                <p class="dates" id="click19">
+                    July 21
+                </p>
+                <p class="dates" id="click20">
+                    July 22
+                </p>
+                <p class="dates" id="click21">
+                    July 23
+                </p>
+                <p class="dates" id="click22">
+                    July 24
+                </p>
+            </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script>
@@ -139,6 +157,14 @@
             var click15 = document.getElementById("click15");
             var click16 = document.getElementById("click16");
             var click17 = document.getElementById("click17");
+
+
+            var click18 = document.getElementById("click18");
+            var click19 = document.getElementById("click19");
+            var click20 = document.getElementById("click20");
+            var click21 = document.getElementById("click21");
+            var click22 = document.getElementById("click22");
+
 
             var green = 0;
             var yellow = 0;
@@ -160,6 +186,12 @@
             var getColor15;
             var getColor16;
             var getColor17;
+
+            var getColor18;
+            var getColor19;
+            var getColor20;
+            var getColor21;
+            var getColor22;
 
             console.log(moment().format("MMM Do"));
             document.getElementById("currentDate").innerHTML = moment().format("MMMM Do");
@@ -225,6 +257,25 @@
                 getColor17 = localStorage.background17;
                 click17.style.backgroundColor = getColor17;
             }
+
+            if (localStorage.getItem("background18") !== null) {
+                getColor18 = localStorage.background18;
+                click18.style.backgroundColor = getColor18;
+            }if (localStorage.getItem("background19") !== null) {
+                getColor19 = localStorage.background19;
+                click19.style.backgroundColor = getColor19;
+            }if (localStorage.getItem("background20") !== null) {
+                getColor20 = localStorage.background20;
+                click20.style.backgroundColor = getColor20;
+            }if (localStorage.getItem("background21") !== null) {
+                getColor21 = localStorage.background21;
+                click21.style.backgroundColor = getColor21;
+            }if (localStorage.getItem("background22") !== null) {
+                getColor22 = localStorage.background22;
+                click22.style.backgroundColor = getColor22;
+            }
+
+
 
             function totals() {
                 green = localStorage.getItem("green");
@@ -1012,6 +1063,263 @@
                     green++;
                     i++;
                     localStorage.setItem("background17", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            });
+
+            click18.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor18 == "green") {
+                    getColor18 = "yellow";
+                    click18.style.backgroundColor = getColor18;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background18", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor18 == "yellow") {
+                    getColor18 = "red";
+                    click18.style.backgroundColor = getColor18;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background18", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor18 == "red") {
+                    getColor18 = "white";
+                    click18.style.backgroundColor = getColor18;
+                    red--;
+                    i--;
+                    localStorage.setItem("background18", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor18 = "green";
+                    click18.style.backgroundColor = getColor18;
+                    green++;
+                    i++;
+                    localStorage.setItem("background18", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            }); click19.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor19 == "green") {
+                    getColor19 = "yellow";
+                    click19.style.backgroundColor = getColor19;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background19", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor19 == "yellow") {
+                    getColor19 = "red";
+                    click19.style.backgroundColor = getColor19;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background19", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor19 == "red") {
+                    getColor19 = "white";
+                    click19.style.backgroundColor = getColor19;
+                    red--;
+                    i--;
+                    localStorage.setItem("background19", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor19 = "green";
+                    click19.style.backgroundColor = getColor19;
+                    green++;
+                    i++;
+                    localStorage.setItem("background19", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            }); click20.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor20 == "green") {
+                    getColor20 = "yellow";
+                    click20.style.backgroundColor = getColor20;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background20", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor20 == "yellow") {
+                    getColor20 = "red";
+                    click20.style.backgroundColor = getColor20;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background20", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor20 == "red") {
+                    getColor20 = "white";
+                    click20.style.backgroundColor = getColor20;
+                    red--;
+                    i--;
+                    localStorage.setItem("background20", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor20 = "green";
+                    click20.style.backgroundColor = getColor20;
+                    green++;
+                    i++;
+                    localStorage.setItem("background20", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            }); click21.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor21 == "green") {
+                    getColor21 = "yellow";
+                    click21.style.backgroundColor = getColor21;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background21", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor21 == "yellow") {
+                    getColor21 = "red";
+                    click21.style.backgroundColor = getColor21;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background21", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor21 == "red") {
+                    getColor21 = "white";
+                    click21.style.backgroundColor = getColor21;
+                    red--;
+                    i--;
+                    localStorage.setItem("background21", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor21 = "green";
+                    click21.style.backgroundColor = getColor21;
+                    green++;
+                    i++;
+                    localStorage.setItem("background21", "green");
+                    localStorage.setItem("green", green);
+                    localStorage.setItem("i", i);
+                }
+                console.log(green);
+                document.getElementById("green").innerHTML = green;
+                document.getElementById("yellow").innerHTML = yellow;
+                document.getElementById("red").innerHTML = red;
+                if (isNaN(Math.floor((green / i) * 100))) {
+                    document.getElementById("greenp").innerHTML = 0;
+                    document.getElementById("yellowp").innerHTML = 0;
+                    document.getElementById("redp").innerHTML = 0;
+                } else {
+                    document.getElementById("greenp").innerHTML = Math.floor((green / i) * 100);
+                    document.getElementById("yellowp").innerHTML = Math.floor((yellow / i) * 100);
+                    document.getElementById("redp").innerHTML = Math.floor((red / i) * 100);
+                }
+            }); click22.addEventListener("click", function () {
+                green = localStorage.getItem("green");
+                yellow = localStorage.getItem("yellow");
+                red = localStorage.getItem("red");
+                i = localStorage.getItem("i");
+                if (getColor22 == "green") {
+                    getColor22 = "yellow";
+                    click22.style.backgroundColor = getColor22;
+                    yellow++;
+                    green--;
+                    localStorage.setItem("background22", "yellow");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("green", green);
+                } else if (getColor22 == "yellow") {
+                    getColor22 = "red";
+                    click22.style.backgroundColor = getColor22;
+                    red++;
+                    yellow--;
+                    localStorage.setItem("background22", "red");
+                    localStorage.setItem("yellow", yellow);
+                    localStorage.setItem("red", red);
+                } else if (getColor22 == "red") {
+                    getColor22 = "white";
+                    click22.style.backgroundColor = getColor22;
+                    red--;
+                    i--;
+                    localStorage.setItem("background22", "white");
+                    localStorage.setItem("red", red);
+                    localStorage.setItem("i", i);
+                } else {
+                    getColor22 = "green";
+                    click22.style.backgroundColor = getColor22;
+                    green++;
+                    i++;
+                    localStorage.setItem("background22", "green");
                     localStorage.setItem("green", green);
                     localStorage.setItem("i", i);
                 }
